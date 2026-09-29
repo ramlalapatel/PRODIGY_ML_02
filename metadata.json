@@ -1,0 +1,6 @@
+{
+  "name": "Customer Segmentation ML Studio",
+  "description": "Beginner-friendly retail customer segmentation project using K-Means clustering, featuring exploratory data analysis, optimal K analysis (Elbow & Silhouette), NumPy scratch comparison, 2D/3D visualizations, and targeted marketing strategy playbook.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
