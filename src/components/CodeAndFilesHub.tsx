@@ -189,7 +189,20 @@ st.success(f"Assigned to Cluster {pred}")`,
 
     'README.md': `# Retail Customer Segmentation using K-Means Clustering
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Studio-6366f1?style=for-the-badge&logo=google-cloud&logoColor=white)](https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io/)
+
 A complete, beginner-friendly machine learning project segmenting retail customers.
+
+## 🔗 Live Interactive Demo
+Try the live web app in your browser:
+https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app
+
+## How to Show Link on GitHub:
+1. Open your repository on GitHub.
+2. Under "About" on the right sidebar, click the gear icon ⚙️.
+3. Paste the live URL into the "Website" field and click Save changes!
 
 ## Quickstart
 \`\`\`bash

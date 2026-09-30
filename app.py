@@ -91,6 +91,7 @@ CLUSTER_PROFILES = {
 # -----------------------------------------------------------------------------
 st.sidebar.title("🛍️ Customer Segmentation")
 st.sidebar.markdown("K-Means Clustering & Marketing Analytics")
+st.sidebar.markdown("[🌐 **Open Live Cloud App**](https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app)")
 
 uploaded_file = st.sidebar.file_uploader(
     "Upload Customer CSV",

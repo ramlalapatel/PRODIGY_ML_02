@@ -1,13 +1,14 @@
 import React from 'react';
-import { Download, FileSpreadsheet, Sparkles, FolderDown } from 'lucide-react';
+import { Download, FileSpreadsheet, Sparkles, FolderDown, Globe, GitBranch } from 'lucide-react';
 
-export type ActiveTab = 'pipeline' | 'simulator' | 'scratch' | 'visuals' | 'playbook' | 'code' | 'dataset';
+export type ActiveTab = 'pipeline' | 'visuals' | 'simulator' | 'playbook' | 'scratch' | 'code' | 'dataset';
 
 interface TopBarProps {
   activeTab: ActiveTab;
   onTabChange: (tab: ActiveTab) => void;
   onExportCsv: () => void;
   onDownloadProject: () => void;
+  onOpenGitHubModal: () => void;
   totalCustomers: number;
 }
 
@@ -16,6 +17,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   onTabChange,
   onExportCsv,
   onDownloadProject,
+  onOpenGitHubModal,
   totalCustomers
 }) => {
   const navTabs: { id: ActiveTab; label: string }[] = [
@@ -67,12 +69,21 @@ export const TopBar: React.FC<TopBarProps> = ({
         {/* Zone 3: 1-2 Primary Action Buttons */}
         <div className="flex items-center gap-2 shrink-0">
           <button
+            onClick={onOpenGitHubModal}
+            title="GitHub Setup & Live Link"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-indigo-300 bg-indigo-950/60 border border-indigo-500/40 rounded-lg hover:bg-indigo-900/70 hover:text-white transition-colors whitespace-nowrap shadow-sm"
+          >
+            <Globe className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="hidden sm:inline">GitHub &amp;</span> Live Link
+          </button>
+
+          <button
             onClick={onExportCsv}
             title="Download clustered CSV"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-900 border border-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors whitespace-nowrap"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-900 border border-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors whitespace-nowrap"
           >
             <FileSpreadsheet className="w-3.5 h-3.5 text-indigo-400" />
-            <span className="hidden sm:inline">Export</span> Segments.csv
+            <span>Export CSV</span>
           </button>
 
           <button
@@ -80,7 +91,7 @@ export const TopBar: React.FC<TopBarProps> = ({
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-colors shadow-sm shadow-indigo-600/30 whitespace-nowrap"
           >
             <FolderDown className="w-3.5 h-3.5" />
-            <span>Download Project</span>
+            <span>Files</span>
           </button>
         </div>
       </div>

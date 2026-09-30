@@ -22,6 +22,10 @@ import { MarketingPlaybookView } from './components/MarketingPlaybookView';
 import { CustomerPredictorWidget } from './components/CustomerPredictorWidget';
 import { CodeAndFilesHub } from './components/CodeAndFilesHub';
 import { DatasetBrowserView } from './components/DatasetBrowserView';
+import { GitHubModal } from './components/GitHubModal';
+import { Globe, Copy, Check, ExternalLink } from 'lucide-react';
+
+const LIVE_APP_URL = 'https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app';
 
 export default function App() {
   // Application State
@@ -29,6 +33,8 @@ export default function App() {
   const [sourceName, setSourceName] = useState<string>('Mall_Customers.csv');
   const [isCustomData, setIsCustomData] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<ActiveTab>('pipeline');
+  const [isGitHubModalOpen, setIsGitHubModalOpen] = useState<boolean>(false);
+  const [bannerCopied, setBannerCopied] = useState<boolean>(false);
 
   // Model Hyperparameters
   const [is3D, setIs3D] = useState<boolean>(false);
@@ -161,11 +167,51 @@ export default function App() {
         onTabChange={setActiveTab}
         onExportCsv={handleExportCsv}
         onDownloadProject={() => setActiveTab('code')}
+        onOpenGitHubModal={() => setIsGitHubModalOpen(true)}
         totalCustomers={data.length}
       />
 
       {/* Main Workspace Body */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+        {/* Live GitHub Banner */}
+        <div className="mb-4 bg-gradient-to-r from-indigo-950/70 via-slate-900 to-indigo-950/40 border border-indigo-500/30 rounded-xl p-3 px-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-slate-300 font-medium">
+              Live Hosted App URL:
+            </span>
+            <a
+              href={LIVE_APP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-indigo-300 hover:text-indigo-200 underline underline-offset-2 truncate max-w-xs sm:max-w-md"
+            >
+              {LIVE_APP_URL}
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(LIVE_APP_URL);
+                setBannerCopied(true);
+                setTimeout(() => setBannerCopied(false), 2000);
+              }}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-indigo-900/60 hover:bg-indigo-900 border border-indigo-500/40 text-indigo-200 font-medium transition-colors"
+            >
+              {bannerCopied ? <Check className="w-3.5 h-3.5 text-emerald-300" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{bannerCopied ? 'Link Copied!' : 'Copy Link'}</span>
+            </button>
+
+            <button
+              onClick={() => setIsGitHubModalOpen(true)}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-white font-medium transition-colors"
+            >
+              <span>GitHub Instructions</span>
+            </button>
+          </div>
+        </div>
+
         {/* Global Dataset Toolbar & Hyperparameter Bar */}
         <DatasetUploader
           onDataLoaded={handleDataLoaded}
@@ -374,6 +420,13 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* GitHub Setup & Live Link Modal */}
+      <GitHubModal
+        isOpen={isGitHubModalOpen}
+        onClose={() => setIsGitHubModalOpen(false)}
+        liveUrl={LIVE_APP_URL}
+      />
     </div>
   );
 }

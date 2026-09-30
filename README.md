@@ -1,6 +1,38 @@
 # Retail Customer Segmentation using K-Means Clustering
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Studio-6366f1?style=for-the-badge&logo=google-cloud&logoColor=white)](https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](LICENSE)
+
 A complete, beginner-friendly machine learning and retail analytics project that segments store shoppers based on their annual income, spending habits, and demographic profiles using **K-Means Clustering**.
+
+---
+
+## 🔗 Live Interactive App & Demo
+
+You can try the complete interactive ML Workbench and customer predictor live in your browser:
+
+> 🌐 **Live Web Application**:  
+> **[https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app](https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app)**
+
+---
+
+## 📌 How to Show this Live Link on your GitHub Repository
+
+To display the live application link right at the top of your GitHub repository page:
+
+1. Open your repository on GitHub (`https://github.com/<YOUR-USERNAME>/<YOUR-REPO-NAME>`).
+2. On the right-hand sidebar at the top, locate the **"About"** section.
+3. Click the **⚙️ (Settings gear icon)** next to "About".
+4. In the **Website** field, paste:
+   ```
+   https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app
+   ```
+5. *(Optional)* Add topics: `machine-learning`, `kmeans-clustering`, `customer-segmentation`, `streamlit`, `python`.
+6. Click **"Save changes"**.  
+   *Now every visitor will see the direct clickable live link at the very top of your GitHub project!*
 
 ---
 
