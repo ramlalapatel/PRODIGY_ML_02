@@ -97,17 +97,22 @@ git push -u origin main`;
             </h4>
 
             {/* Method A: In GitHub "About" Website Section */}
-            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-2">
-              <div className="flex items-center gap-2 font-semibold text-slate-200">
-                <span className="w-5 h-5 rounded-full bg-slate-800 flex items-center justify-center text-[11px] font-mono text-indigo-400">
-                  1
+            <div className="bg-slate-950 p-3.5 rounded-xl border border-indigo-500/30 space-y-2">
+              <div className="flex items-center gap-2 font-semibold text-indigo-300">
+                <span className="w-5 h-5 rounded-full bg-indigo-900/80 flex items-center justify-center text-[11px] font-mono text-indigo-300">
+                  ★
                 </span>
-                <span>GitHub Repository ke &quot;About&quot; box me Link dalein (Sabse Best Tarika):</span>
+                <span>GitHub Pages me kya select karein: &quot;GitHub Actions&quot; (NOT Branch)</span>
               </div>
-              <ol className="list-decimal list-inside space-y-1.5 text-slate-400 pl-2 leading-relaxed">
-                <li>Apne GitHub repo page par jayein (<code className="text-slate-300">github.com/{username}/{repoName}</code>).</li>
-                <li>Right side me <strong className="text-slate-200">&quot;About&quot;</strong> ke bagal me <strong>⚙️ (Settings gear icon)</strong> par click karein.</li>
-                <li><strong className="text-slate-200">Website</strong> field me ye link paste karein aur <strong className="text-slate-200">&quot;Save changes&quot;</strong> dabayein.</li>
+              <ol className="list-decimal list-inside space-y-1.5 text-slate-300 pl-2 leading-relaxed">
+                <li>Apne GitHub Repo par <strong>Settings</strong> &gt; <strong>Pages</strong> par jayein.</li>
+                <li><strong>Source</strong> dropdown me <strong className="text-emerald-400">&quot;GitHub Actions&quot;</strong> select karein (Deploy from a branch mat karein).</li>
+                <li>Humne <code className="text-indigo-300">.github/workflows/deploy.yml</code> file pehle se bana di hai.</li>
+                <li>Jaise hi aap <code className="text-indigo-300">git push</code> karenge, GitHub khud app build karke 1 minute me ye link live de dega:
+                  <div className="font-mono text-emerald-400 text-xs mt-1 bg-slate-900 p-2 rounded border border-slate-800">
+                    https://{username}.github.io/{repoName}/
+                  </div>
+                </li>
               </ol>
             </div>
 

@@ -19,20 +19,20 @@ You can try the complete interactive ML Workbench and customer predictor live in
 
 ---
 
-## 📌 How to Show this Live Link on your GitHub Repository
+## 🚀 Automatic 1-Click Deployment to GitHub Pages (via GitHub Actions)
 
-To display the live application link right at the top of your GitHub repository page:
+This repository includes a pre-configured **GitHub Actions Workflow** (`.github/workflows/deploy.yml`). As soon as you push your code, GitHub automatically builds and hosts your app on GitHub Pages!
 
-1. Open your repository on GitHub (`https://github.com/<YOUR-USERNAME>/<YOUR-REPO-NAME>`).
-2. On the right-hand sidebar at the top, locate the **"About"** section.
-3. Click the **⚙️ (Settings gear icon)** next to "About".
-4. In the **Website** field, paste:
+### How to Enable in GitHub (One-time, 10 seconds):
+1. Go to your GitHub repository -> Click **Settings** (top tab).
+2. In the left sidebar, click **Pages** (under "Code and automation").
+3. Under **Build and deployment -> Source**, select:
+   👉 **`GitHub Actions`** (Do NOT choose "Deploy from a branch").
+4. Now push your code (`git push origin main`).
+5. Go to the **Actions** tab on your GitHub repository. Within ~1 minute, the build will finish and GitHub will generate your live link:
+   ```text
+   https://<YOUR-USERNAME>.github.io/<YOUR-REPO-NAME>/
    ```
-   https://ais-pre-m6ged3numqdvjurljbj4m7-5834640671.asia-southeast1.run.app
-   ```
-5. *(Optional)* Add topics: `machine-learning`, `kmeans-clustering`, `customer-segmentation`, `streamlit`, `python`.
-6. Click **"Save changes"**.  
-   *Now every visitor will see the direct clickable live link at the very top of your GitHub project!*
 
 ---
 
